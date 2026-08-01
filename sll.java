@@ -38,4 +38,14 @@ public class sll {
         }
         System.out.println();
     }
+
+    public static void main(String[] args) {
+        sll s1 = new sll();
+
+        s1.addnode(5);
+        s1.addnode(7);
+        s1.addnode(8);
+
+        s1.display();
+    }
 }
