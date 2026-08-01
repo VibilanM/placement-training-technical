@@ -63,6 +63,31 @@ public class sll {
         return max;
     }
 
+    public int minelement() {
+        node current = head;
+        int min = current.data;
+
+        while (current != null) {
+            if (current.data < min) {
+                min = current.data;
+            }
+            current = current.next;
+        }
+        return min;
+    }
+
+    public void search(int data) {
+        node current = head;
+        while (current != null) {
+            if (current.data == data) {
+                System.out.println("Element found");
+                return;
+            }
+            current = current.next;
+        }
+        System.out.println("Element not found");
+    }
+
     public static void main(String[] args) {
         sll s1 = new sll();
 
@@ -72,8 +97,12 @@ public class sll {
 
         s1.display();
 
-        System.out.println(s1.listlength());
+        System.out.println("The length of the list is: " + s1.listlength());
 
-        System.out.println(s1.maxelement());
+        System.out.println("The maximum element in the list is: " + s1.maxelement());
+        System.out.println("The minimum element in the list is: " + s1.minelement());
+
+        s1.search(5);
+        s1.search(10);
     }
 }
