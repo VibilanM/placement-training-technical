@@ -50,6 +50,19 @@ public class sll {
         return count;
     }
 
+    public int maxelement() {
+        node current = head;
+        int max = current.data;
+
+        while (current != null) {
+            if (current.data > max) {
+                max = current.data;
+            }
+            current = current.next;
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
         sll s1 = new sll();
 
@@ -59,6 +72,8 @@ public class sll {
 
         s1.display();
 
-        s1.listlength();
+        System.out.println(s1.listlength());
+
+        System.out.println(s1.maxelement());
     }
 }
