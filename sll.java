@@ -39,6 +39,17 @@ public class sll {
         System.out.println();
     }
 
+    public int listlength() {
+        node current = head;
+        int count = 0;
+
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         sll s1 = new sll();
 
@@ -47,5 +58,7 @@ public class sll {
         s1.addnode(8);
 
         s1.display();
+
+        s1.listlength();
     }
 }
