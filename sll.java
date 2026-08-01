@@ -88,6 +88,36 @@ public class sll {
         System.out.println("Element not found");
     }
 
+    public void addToPosition(int data, int pos) {
+        if (pos < 1 || pos > listlength() + 1) {
+            System.out.println("Invalid position");
+            return;
+        }
+
+        node newNode = new node(data);
+
+        if (pos == 1) {
+            newNode.next = head;
+            head = newNode;
+            if (tail == null) {
+                tail = newNode;
+            }
+            return;
+        }
+
+        node current = head;
+        for (int i = 1; i < pos - 1; i++) {
+            current = current.next;
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+
+        if (newNode.next == null) {
+            tail = newNode;
+        }
+    }
+
     public static void main(String[] args) {
         sll s1 = new sll();
 
@@ -104,5 +134,9 @@ public class sll {
 
         s1.search(5);
         s1.search(10);
+
+        System.out.println("Adding 10 at position 2:");
+        s1.addToPosition(10, 2);
+        s1.display();
     }
 }
